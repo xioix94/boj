@@ -29,9 +29,6 @@ class Solution {
         }
         
         // 마지막 요소 아니라면 함수 재호출
-        count = calculateRecursive(numbers, index + 1, target, count, sum + numbers[index]);
-        count = calculateRecursive(numbers, index + 1, target, count, sum - numbers[index]);
-        
-        return count;
+        return calculateRecursive(numbers, index + 1, target, count, sum + numbers[index]) + calculateRecursive(numbers, index + 1, target, count, sum - numbers[index]);
     }
 }
