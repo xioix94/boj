@@ -10,8 +10,7 @@ class Solution {
         Stack<Integer> stack = new Stack<>();
         for (int i = 0; i < numbers.length; i++) {
             while (stack.size() != 0 && numbers[stack.peek()] < numbers[i]) {
-                int j = stack.pop();
-                answer[j] = numbers[i];
+                answer[stack.pop()] = numbers[i];
             }
             
             stack.push(i);
